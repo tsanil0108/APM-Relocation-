@@ -1,37 +1,344 @@
-.whatsapp-fab {
+/* =========================================
+   FLOATING CONTACT BUTTONS
+========================================= */
+
+.floating-contact {
   position: fixed;
   right: 24px;
   bottom: 24px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* =========================================
+   COMMON BUTTON
+========================================= */
+
+.floating-contact__btn {
+  position: relative;
+
   width: 58px;
   height: 58px;
-  border-radius: 50%;
-  background: #25d366;
-  color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 28px -8px rgba(37, 211, 102, 0.55);
-  z-index: 90;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
-.whatsapp-fab__ping {
+
+/* =========================================
+   CALL BUTTON
+========================================= */
+
+.floating-contact__call {
+  background: #ffc300;
+  color: #18140f;
+
+  box-shadow:
+    0 12px 28px -8px
+    rgba(255, 195, 0, 0.65);
+}
+
+.floating-contact__call:hover {
+  background: #ffcf33;
+
+  box-shadow:
+    0 15px 34px -8px
+    rgba(255, 195, 0, 0.75);
+}
+
+
+/* Call icon */
+
+.floating-contact__call svg {
+  position: relative;
+  z-index: 2;
+
+  width: 24px;
+  height: 24px;
+
+  stroke-width: 2.4;
+}
+
+
+/* =========================================
+   WHATSAPP BUTTON
+========================================= */
+
+.floating-contact__whatsapp {
+  background: #25d366;
+  color: #ffffff;
+
+  box-shadow:
+    0 12px 28px -8px
+    rgba(37, 211, 102, 0.55);
+}
+
+.floating-contact__whatsapp:hover {
+  background: #1ebe5d;
+
+  box-shadow:
+    0 15px 34px -8px
+    rgba(37, 211, 102, 0.7);
+}
+
+
+/* =========================================
+   ACTUAL WHATSAPP ICON
+========================================= */
+
+.floating-contact__whatsapp-icon {
+  position: relative;
+  z-index: 3;
+
+  display: block;
+
+  width: 31px;
+  height: 31px;
+
+  color: #ffffff;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   WHATSAPP PING ANIMATION
+========================================= */
+
+.floating-contact__ping {
   position: absolute;
   inset: 0;
+
+  z-index: -1;
+
   border-radius: 50%;
+
   background: #25d366;
-  animation: ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+
+  pointer-events: none;
+
+  animation:
+    contactPing
+    2.2s
+    cubic-bezier(0, 0, 0.2, 1)
+    infinite;
 }
 
-@keyframes ping {
-  0% { transform: scale(1); opacity: 0.6; }
-  75%, 100% { transform: scale(1.9); opacity: 0; }
+@keyframes contactPing {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+
+  75%,
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
 }
+
+
+/* =========================================
+   TOOLTIP
+========================================= */
+
+.floating-contact__tooltip {
+  position: absolute;
+
+  right: calc(100% + 12px);
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    translateX(6px);
+
+  padding: 8px 13px;
+
+  border-radius: 8px;
+
+  background: #18140f;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.15);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+/* Tooltip arrow */
+
+.floating-contact__tooltip::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  right: -5px;
+
+  width: 10px;
+  height: 10px;
+
+  transform:
+    translateY(-50%)
+    rotate(45deg);
+
+  background: #18140f;
+}
+
+
+/* Show tooltip on hover */
+
+.floating-contact__btn:hover
+.floating-contact__tooltip {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(-50%)
+    translateX(0);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .floating-contact {
+    right: 18px;
+    bottom: 18px;
+    gap: 11px;
+  }
+
+  .floating-contact__btn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .floating-contact__whatsapp-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .floating-contact__call svg {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 640px) {
-  .whatsapp-fab {
-    right: 16px;
-    bottom: 16px;
+
+  .floating-contact {
+    right: 14px;
+    bottom: 14px;
+
+    gap: 10px;
+  }
+
+  .floating-contact__btn {
     width: 52px;
     height: 52px;
+  }
+
+  .floating-contact__call svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .floating-contact__whatsapp-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Mobile par tooltip nahi chahiye */
+  .floating-contact__tooltip {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .floating-contact {
+    right: 11px;
+    bottom: 11px;
+
+    gap: 9px;
+  }
+
+  .floating-contact__btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .floating-contact__call svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .floating-contact__whatsapp-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .floating-contact__ping {
+    animation: none;
+  }
+
+  .floating-contact__btn {
+    transition: none;
   }
 }
