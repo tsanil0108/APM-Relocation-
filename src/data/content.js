@@ -1,0 +1,160 @@
+export const COMPANY = {
+  name: "APM Relocation",
+  tagline: "Packers & Movers",
+  since: "2005",
+  phone1: "+91 99676 61155",
+  phone2: "+91 91361 06757",
+  email: "info@apmrelocationindia.co.in",
+  website: "www.apmrelocationindia.co.in",
+  address: "Plot No. 9, Durga Soc., Punam Nagar, JVLR, MMRDA, Jogeshwari (E), Mumbai - 400093",
+};
+
+export const STATS = [
+  { value: 20, suffix: "+", label: "Years of Trust" },
+  { value: 50000, suffix: "+", label: "Happy Customers" },
+  { value: 120, suffix: "+", label: "Cities Covered" },
+  { value: 99, suffix: "%", label: "Safe Deliveries" },
+];
+
+export const CORE_PROMISES = [
+  { title: "Safe", desc: "Every item handled and wrapped with care from door to door." },
+  { title: "Reliable", desc: "Consistent, professional service you can plan your move around." },
+  { title: "Time-Bound", desc: "We commit to schedules and deliver right on time, every time." },
+  { title: "Scratch Free", desc: "Premium packing materials keep your belongings damage-free." },
+];
+
+export const SERVICES = [
+  {
+    id: "home-shifting",
+    title: "Home Shifting",
+    icon: "home",
+    img: "/images/svc-house.jpg",
+    short: "Safe relocation of valuables — TVs, ACs, fridges, furniture and more — to your new address.",
+    desc: "Our home packers and movers service covers the relocation of valuable and delicate items such as televisions, air conditioning systems, refrigerators, furniture, dining tables, cars and bikes from your home to your new destination. We pack, load, transport, unload, unpack and arrange everything at your new place.",
+    points: ["Disassembling furniture, light fittings & equipment", "Bubble wrap, foam, carton & wooden box packing", "Labelled boxes with a complete packing list", "Full unpacking & arrangement at the new home"],
+  },
+  {
+    id: "office-shifting",
+    title: "Office Shifting",
+    icon: "briefcase",
+    img: "/images/svc-office-relocation.jpg",
+    short: "Documents, computers and office assets moved with extreme care and minimal downtime.",
+    desc: "Our office packing and moving process is handled with extreme care — every document is packed securely and all computers and office equipment travel in specially designed containers. With a network across India, we keep your business moving with almost no downtime.",
+    points: ["Secure document & IT equipment handling", "Specially designed containers for electronics", "Written proposal before every move", "Pan-India network of consultants"],
+  },
+  {
+    id: "commercial-shifting",
+    title: "Commercial Shifting",
+    icon: "building",
+    img: "/images/svc-office-building.jpg",
+    short: "Customised, countrywide commercial relocation for large-scale business assets.",
+    desc: "Years of experience relocating commercial goods let us offer high-standard, personalised commercial relocation services everywhere in India. Our team works to your budget, preference and convenience, so your staff and technicians can install and place transported goods at the new site quickly.",
+    points: ["Countrywide commercial relocation network", "Budget-friendly customised plans", "Skilled installation support on arrival", "Dedicated relocation consultant"],
+  },
+  {
+    id: "local-shifting",
+    title: "Local Shifting",
+    icon: "map-pin",
+    img: "/images/svc-mover-box.jpg",
+    short: "Affordable home, office and apartment shifting anywhere within your city.",
+    desc: "We provide local shifting services for homes, offices and apartments anywhere in your city at an affordable price — including disassembly, premium packing, labelling, loading, transport, unloading and complete arrangement at your new place.",
+    points: ["City-wide home, office & apartment moves", "Affordable, transparent pricing", "Same-day & scheduled slots available", "Full-service unpacking on arrival"],
+  },
+  {
+    id: "car-bike-shifting",
+    title: "Car & Bike Transportation",
+    icon: "car",
+    img: "/images/svc-car-transport.jpg",
+    short: "Trailers and heavy trucks for hassle-free, on-time vehicle transportation.",
+    desc: "We provide personalised and cost-effective car and bike shifting services across India, using specially designed trucks and trailers to carry vehicles safely. Our licensed, approved drivers are trained to handle the transportation process end to end.",
+    points: ["Specially designed trailers & carriers", "Licensed, approved drivers only", "Doorstep pickup & delivery", "Insurance-backed transportation"],
+  },
+  {
+    id: "loading-unloading",
+    title: "Loading & Unloading",
+    icon: "package",
+    img: "/images/svc-truck-loading.jpg",
+    short: "Skilled teams using pulleys, lifters and hydraulic elevators for safe handling.",
+    desc: "Loading and unloading is a crucial part of every relocation and is executed by our highly skilled teams using pulleys, lifters, hydraulic elevators and loading spouts as required — with boxes arranged, loaded, weatherproofed and safely unloaded at the destination.",
+    points: ["Pulleys, lifters & hydraulic elevators", "Careful placement based on goods type", "Waterproof sheet covering", "Trained, expert loading crews"],
+  },
+  {
+    id: "transportation",
+    title: "Transportation Services",
+    icon: "truck",
+    img: "/images/svc-truck-skyline.jpg",
+    short: "A well-connected pan-India network for smooth, stress-free transportation.",
+    desc: "One of India's top-rated transportation services, committed to making your movement simple and stress-free. Our well-connected network of associates across India ensures your goods reach safely, backed by transparent quotes and dependable timelines.",
+    points: ["Well-connected pan-India associate network", "Transparent quotes with no hidden costs", "GPS-enabled shipment tracking", "Firm delivery commitments"],
+  },
+  {
+    id: "storage-warehousing",
+    title: "Storage & Warehousing",
+    icon: "warehouse",
+    img: "/images/gallery-storage-aisle.jpg",
+    short: "Secure, hygienic storage facilities for short and long-term needs.",
+    desc: "Need somewhere safe to keep your belongings between moves? Our modern, secure warehousing facilities offer short and long-term storage solutions for individuals and businesses, with round-the-clock monitoring and easy retrieval.",
+    points: ["Short & long-term storage plans", "Secure, monitored warehouse facilities", "Easy scheduled retrieval", "Suitable for homes & businesses"],
+  },
+];
+
+export const PROCESS_STEPS = [
+  { step: "01", title: "Free Consultation", desc: "Share your requirements — our consultant visits or calls to understand your move." },
+  { step: "02", title: "Written Proposal", desc: "We send a transparent, itemised quote so there are no surprises later." },
+  { step: "03", title: "Pack & Label", desc: "Every item is disassembled, wrapped and labelled with a complete packing list." },
+  { step: "04", title: "Load & Transport", desc: "Skilled crews load, secure and transport your goods on our tracked fleet." },
+  { step: "05", title: "Unload & Arrange", desc: "We unload, unpack and arrange everything at your new place, exactly as promised." },
+];
+
+export const NETWORK_CITIES = [
+  "Mumbai", "Navi Mumbai", "Pune", "Nagpur", "Nasik", "Bangaluru", "Hubli", "Mangalore", "Mysore",
+  "Hyderabad", "Vijayawada", "Visakhapatnam", "Chennai", "Coimbatore", "Madurai", "Trichy", "Salem",
+  "Cochin", "Calicut", "Trivendrum", "Kottayam", "Delhi", "Gurgaon", "Faridabad", "Ghaziabad", "Noida",
+  "Chandigarh", "Ludhiana", "Jaipur", "Kolkata", "Bhuvneshwar", "Raipur", "Ranchi", "Jamshedpur",
+  "Patna", "Lucknow", "Kanpur", "Meerut", "Dehradun", "Haridwar", "Rudrapur", "Ahmedabad", "Baroda",
+  "Surat", "Rajkot", "Bhopal", "Indore", "Gwalior", "Aurangabad", "Kolhapur", "Goa",
+];
+
+export const BRANCHES = [
+  { city: "Mumbai", tag: "Head Office", address: "Plot No. 9, Durga Soc., Punam Nagar, JVLR, MMRDA, Jogeshwari (E), Mumbai - 400093", img: "/images/hero-office-signage.jpg" },
+  { city: "Delhi", tag: "Branch Office", address: "Serving Delhi NCR — Gurgaon, Faridabad, Ghaziabad & Noida", img: "/images/hero-truck-drone-city.jpg" },
+  { city: "Bangaluru", tag: "Branch Office", address: "Reliable moving solutions across Bangaluru", img: "/images/hero-truck-night.jpg" },
+  { city: "Chennai", tag: "Branch Office", address: "Professional packers & movers in Chennai", img: "/images/services-move.jpg" },
+  { city: "Hyderabad", tag: "Branch Office", address: "Specialised moving services in Hyderabad", img: "/images/hero-truck-building2.jpg" },
+  { city: "Kolkata", tag: "Branch Office", address: "Trusted relocation partner across Kolkata", img: "/images/hero-loading-building.jpg" },
+];
+
+export const CLIENTS = ["IFFCO", "High Court, Allahabad", "Indian Army", "Indian Air Force", "NTPC", "L&T Infotech", "IBM", "ICICI Bank", "HDFC Bank", "Airtel"];
+
+export const TESTIMONIALS = [
+  { name: "Neha Sharma", city: "Mumbai", quote: "The team packed our entire 3BHK in a single day and nothing was damaged. Genuinely stress-free move.", rating: 5 },
+  { name: "Arvind Rao", city: "Bangaluru", quote: "Office relocation over a weekend with zero data loss and everything labelled perfectly. Highly recommend.", rating: 5 },
+  { name: "Priya Menon", city: "Chennai", quote: "Our car and household goods arrived on the exact date promised. Transparent pricing, no hidden charges.", rating: 5 },
+  { name: "Sandeep Verma", city: "Delhi", quote: "Twenty years in business shows — the crew was disciplined, careful and quick. Will use them again.", rating: 4.5 },
+];
+
+export const GALLERY_CATEGORIES = ["All", "Packing", "Loading", "Transportation", "Delivery", "Our Team"];
+
+export const GALLERY_ITEMS = [
+  { cat: "Packing", label: "Careful furniture wrapping", img: "/images/gallery-packing-chair.jpg" },
+  { cat: "Loading", label: "Container loading in progress", img: "/images/gallery-loading-truck1.jpg" },
+  { cat: "Transportation", label: "Fleet on the highway", img: "/images/gallery-transport-city.jpg" },
+  { cat: "Delivery", label: "Safe doorstep delivery", img: "/images/gallery-delivery-couple1.jpg" },
+  { cat: "Our Team", label: "APM crew, ready to move", img: "/images/gallery-team-group.jpg" },
+  { cat: "Packing", label: "Labelled cartons & packing list", img: "/images/gallery-packing-wrap1.jpg" },
+  { cat: "Loading", label: "Hydraulic lift in action", img: "/images/gallery-loading-stairs.jpg" },
+  { cat: "Transportation", label: "Highway run at sunset", img: "/images/gallery-transport-sunset.jpg" },
+  { cat: "Delivery", label: "Happy family, new home", img: "/images/gallery-customers-family.jpg" },
+  { cat: "Our Team", label: "Trained & verified staff", img: "/images/gallery-storage-aisle.jpg" },
+  { cat: "Packing", label: "Bubble-wrap & foam protection", img: "/images/gallery-packing-bubblewrap.jpg" },
+  { cat: "Loading", label: "Warehouse racking & storage", img: "/images/gallery-loading-boxes.jpg" },
+];
+
+export const JOURNEY = [
+  { year: "2005", text: "APM Relocation founded with a mission to deliver dependable moving services." },
+  { year: "2010", text: "Expanded operations and built a professional team of relocation experts." },
+  { year: "2015", text: "Pan-India network established across 100+ cities." },
+  { year: "2018", text: "Introduced secure packing, GPS tracking and insurance-backed services." },
+  { year: "2021", text: "Crossed 40,000+ successful moves with 98% customer satisfaction." },
+  { year: "2024", text: "Continuing to set new benchmarks across the relocation industry in India." },
+];

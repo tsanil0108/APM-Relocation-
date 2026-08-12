@@ -1,0 +1,273 @@
+.services-banner {
+  padding: 36px 0 0;
+}
+.services-banner__frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 1600 / 690;
+}
+.services-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.services-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(24, 20, 15, 0.72) 0%, rgba(24, 20, 15, 0.05) 55%);
+}
+.services-banner__caption {
+  position: absolute;
+  left: 28px;
+  bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--cream);
+}
+.services-banner__caption strong {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+}
+.services-banner__caption span {
+  font-size: 13.5px;
+  color: rgba(255, 253, 246, 0.8);
+  font-weight: 500;
+}
+
+.services-nav {
+  position: sticky;
+  top: 82px;
+  z-index: 40;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.services-nav__row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.services-nav__row::-webkit-scrollbar { display: none; }
+.services-nav__pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--charcoal);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.services-nav__pill svg {
+  color: var(--clay);
+  transition: color 0.25s ease;
+  flex-shrink: 0;
+}
+.services-nav__pill:hover {
+  background: var(--ink);
+  color: var(--yellow);
+  border-color: var(--ink);
+}
+.services-nav__pill:hover svg {
+  color: var(--yellow);
+}
+
+.services-detail {
+  position: relative;
+}
+.services-detail__grain {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(24, 20, 15, 0.025) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.service-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 150px;
+}
+.service-block:first-child { padding-top: 10px; }
+.service-block:last-child { border-bottom: none; }
+
+.service-block--reverse {
+  direction: rtl;
+}
+.service-block--reverse > * {
+  direction: ltr;
+}
+
+/* Photo replaces the old flat icon tile — the icon becomes a small seal
+   sitting on the photo's corner, echoing the verified-stamp mark used
+   elsewhere on the site so every page reads as one family. */
+.service-block__visual {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 1 / 0.85;
+  box-shadow: var(--shadow-soft);
+}
+
+.service-block__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.service-block:hover .service-block__img {
+  transform: scale(1.05);
+}
+
+.service-block__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(24, 20, 15, 0.65) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.service-block__tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+  background: rgba(24, 20, 15, 0.45);
+  backdrop-filter: blur(6px);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.service-block__caption {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  color: var(--cream);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.service-block__seal {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  z-index: 3;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--yellow);
+  border: 3px solid var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 24px -8px rgba(24, 20, 15, 0.4);
+}
+
+.service-block--reverse .service-block__seal {
+  right: auto;
+  left: 20px;
+}
+
+.service-block__copy h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.service-block__copy p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.service-block__copy ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.service-block__copy li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.service-block__copy li svg {
+  color: var(--clay);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.services-cta {
+  position: relative;
+  background: var(--ink);
+  text-align: center;
+  overflow: hidden;
+}
+.services-cta__backdrop {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(255, 195, 0, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+.services-cta__box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .service-block, .service-block--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 30px;
+  }
+  .service-block__visual { aspect-ratio: 16/9; }
+  .service-block--reverse .service-block__seal {
+    left: auto;
+    right: 20px;
+  }
+  .service-block__copy ul { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .services-banner__caption strong { font-size: 18px; }
+  .service-block { padding: 40px 0; }
+  .service-block__seal {
+    width: 46px;
+    height: 46px;
+    top: -12px;
+  }
+}
