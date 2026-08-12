@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Home, Briefcase, Building2, MapPin, Car, Package, Truck, Warehouse, ArrowUpRight } from "lucide-react";
 import "./ServiceCard.css";
 
@@ -35,9 +34,16 @@ export default function ServiceCard({ service, index = 0 }) {
       </div>
       <h3>{service.title}</h3>
       <p>{service.short}</p>
-      <Link to={`/services#${service.id}`} className="service-card__link">
+      <a
+        href="#services"
+        className="service-card__link"
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }}
+      >
         Learn more <ArrowUpRight size={16} />
-      </Link>
+      </a>
     </motion.article>
   );
 }

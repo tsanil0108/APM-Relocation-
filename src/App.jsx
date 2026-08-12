@@ -1,10 +1,7 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
-import PageTransition from "./components/PageTransition/PageTransition";
+import SectionDivider from "./components/SectionDivider/SectionDivider";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -14,22 +11,44 @@ import Gallery from "./pages/Gallery/Gallery";
 import Contact from "./pages/Contact/Contact";
 
 export default function App() {
-  const location = useLocation();
-
   return (
     <div className="app">
-      <ScrollToTop />
       <Navbar />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-          <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-          <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
-          <Route path="/branches" element={<PageTransition><Branches /></PageTransition>} />
-          <Route path="/gallery" element={<PageTransition><Gallery /></PageTransition>} />
-          <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-        </Routes>
-      </AnimatePresence>
+
+      <section id="home" className="page-section">
+        <Home />
+      </section>
+
+      <SectionDivider next="About Us" />
+
+      <section id="about" className="page-section">
+        <About />
+      </section>
+
+      <SectionDivider next="Our Services" />
+
+      <section id="services" className="page-section">
+        <Services />
+      </section>
+
+      <SectionDivider next="Our Branches" />
+
+      <section id="branches" className="page-section">
+        <Branches />
+      </section>
+
+      <SectionDivider next="Gallery" />
+
+      <section id="gallery" className="page-section">
+        <Gallery />
+      </section>
+
+      <SectionDivider next="Contact Us" />
+
+      <section id="contact" className="page-section">
+        <Contact />
+      </section>
+
       <Footer />
       <WhatsAppButton />
     </div>

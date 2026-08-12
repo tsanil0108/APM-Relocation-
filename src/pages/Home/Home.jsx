@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
 import {
   ShieldCheck,
   Clock,
@@ -52,7 +51,6 @@ const MOVE_SIZES = ["1 RK / 1 BHK", "2 BHK", "3 BHK", "4+ BHK / Villa", "Small O
 const PROCESS_ICONS = [PhoneCall, ClipboardList, Package, Truck, PackageCheck];
 
 export default function Home() {
-  const navigate = useNavigate();
   const [activeSlide, setActiveSlide] = useState(0);
   const [form, setForm] = useState({
     moveType: "",
@@ -76,7 +74,11 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/contact", { state: { quote: form } });
+    // Single-page site: scroll down to the Contact section instead of routing.
+    // The entered quote details are kept in sessionStorage so the Contact
+    // form can optionally read/prefill from them.
+    sessionStorage.setItem("apm_quote_prefill", JSON.stringify(form));
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -325,9 +327,16 @@ export default function Home() {
               title="End-to-end relocation, handled with care"
               desc="From a single room to a full commercial fleet move — explore the services that make APM Relocation India's dependable moving partner."
             />
-            <Link to="/services" className="btn btn-outline services-preview__all">
+            <a
+              href="#services"
+              className="btn btn-outline services-preview__all"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("services")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
               View All Services <ArrowRight size={16} />
-            </Link>
+            </a>
           </div>
           <div className="services-preview__grid">
             {SERVICES.slice(0, 6).map((s, i) => (

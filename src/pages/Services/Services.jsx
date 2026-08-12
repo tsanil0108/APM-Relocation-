@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { CheckCircle2, ArrowRight, Home, Briefcase, Building2, MapPin, Car, Package, Truck, Warehouse } from "lucide-react";
 import PageHero from "../../components/PageHero/PageHero";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
@@ -7,6 +6,11 @@ import { SERVICES } from "../../data/content";
 import "./Services.css";
 
 const ICONS = { home: Home, briefcase: Briefcase, building: Building2, "map-pin": MapPin, car: Car, package: Package, truck: Truck, warehouse: Warehouse };
+
+const scrollToContact = (e) => {
+  e.preventDefault();
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 
 export default function Services() {
   return (
@@ -97,9 +101,9 @@ export default function Services() {
                       <li key={pt}><CheckCircle2 size={17} /> {pt}</li>
                     ))}
                   </ul>
-                  <Link to="/contact" className="btn btn-primary">
+                  <a href="#contact" className="btn btn-primary" onClick={scrollToContact}>
                     Get a Quote for {s.title} <ArrowRight size={16} />
-                  </Link>
+                  </a>
                 </div>
               </motion.article>
             );
@@ -117,7 +121,7 @@ export default function Services() {
             title="Talk to a relocation consultant — it's free"
             desc="Tell us what you're moving and where, and we'll send a transparent, written proposal within hours."
           />
-          <Link to="/contact" className="btn btn-light">Request Free Consultation <ArrowRight size={17} /></Link>
+          <a href="#contact" className="btn btn-light" onClick={scrollToContact}>Request Free Consultation <ArrowRight size={17} /></a>
         </div>
       </section>
     </>

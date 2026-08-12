@@ -124,7 +124,7 @@ export const BRANCHES = [
   { city: "Kolkata", tag: "Branch Office", address: "Trusted relocation partner across Kolkata", img: "/images/hero-loading-building.jpg" },
 ];
 
-export const CLIENTS = ["IFFCO", "High Court, Allahabad", "Indian Army", "Indian Air Force", "NTPC", "L&T Infotech", "IBM", "ICICI Bank", "HDFC Bank", "Airtel"];
+export const CLIENTS = ["IFFCO",  "NTPC", "L&T Infotech", "IBM", "ICICI Bank", "HDFC Bank", "Airtel"];
 
 export const TESTIMONIALS = [
   { name: "Neha Sharma", city: "Mumbai", quote: "The team packed our entire 3BHK in a single day and nothing was damaged. Genuinely stress-free move.", rating: 5 },

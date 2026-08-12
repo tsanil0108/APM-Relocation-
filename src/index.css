@@ -29,6 +29,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Single-page sections: offset anchor scroll so content isn't hidden under sticky navbar */
+.page-section {
+  scroll-margin-top: 90px;
+}
+
 body {
   margin: 0;
   background-color: var(--cream);

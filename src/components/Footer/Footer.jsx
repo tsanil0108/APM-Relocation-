@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { COMPANY } from "../../data/content";
 import "./Footer.css";
@@ -17,13 +16,18 @@ const SOCIALS = [
 ];
 
 const QUICK_LINKS = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About Us" },
-  { to: "/services", label: "Services" },
-  { to: "/branches", label: "Our Branches" },
-  { to: "/gallery", label: "Gallery" },
-  { to: "/contact", label: "Contact Us" },
+  { to: "home", label: "Home" },
+  { to: "about", label: "About Us" },
+  { to: "services", label: "Services" },
+  { to: "branches", label: "Our Branches" },
+  { to: "gallery", label: "Gallery" },
+  { to: "contact", label: "Contact Us" },
 ];
+
+const scrollToId = (id) => (e) => {
+  e.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 
 const SERVICE_LINKS = [
   "Home Shifting", "Office Relocation", "Car Transportation", "Bike Transportation", "Loading & Unloading", "Storage & Warehousing",
@@ -38,9 +42,9 @@ export default function Footer() {
             <h3>Ready to move? Let's plan it together.</h3>
             <p>Free consultation · No hidden charges · 20+ years of trusted moving experience.</p>
           </div>
-          <Link to="/contact" className="btn btn-light">
+          <a href="#contact" className="btn btn-light" onClick={scrollToId("contact")}>
             Get Free Quote <ArrowRight size={17} />
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -64,7 +68,7 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <ul>
             {QUICK_LINKS.map((l) => (
-              <li key={l.to}><Link to={l.to}>{l.label}</Link></li>
+              <li key={l.to}><a href={`#${l.to}`} onClick={scrollToId(l.to)}>{l.label}</a></li>
             ))}
           </ul>
         </div>
@@ -73,7 +77,7 @@ export default function Footer() {
           <h4>Our Services</h4>
           <ul>
             {SERVICE_LINKS.map((s) => (
-              <li key={s}><Link to="/services">{s}</Link></li>
+              <li key={s}><a href="#services" onClick={scrollToId("services")}>{s}</a></li>
             ))}
           </ul>
         </div>
