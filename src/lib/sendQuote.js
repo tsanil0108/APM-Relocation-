@@ -36,7 +36,7 @@ export async function sendQuoteEmail(data) {
     // Fails loudly in development so it's obvious the key still needs setting,
     // instead of silently pretending the email was sent.
     throw new Error(
-      "Email delivery isn't set up yet — add your free Web3Forms access key in src/lib/sendQuote.js"
+      "Email delivery isn't set up yet"
     );
   }
 
