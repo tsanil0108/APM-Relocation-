@@ -4,7 +4,7 @@ export const COMPANY = {
   since: "2005",
   phone1: "+91 99676 61155",
   phone2: "+91 91361 06757",
-  email: "info@apmrelocationindia.co.in",
+  email: "relocationapm111@gmail.com",
   website: "www.apmrelocationindia.co.in",
   address: "Plot No. 9, Durga Soc., Punam Nagar, JVLR, MMRDA, Jogeshwari (E), Mumbai - 400093",
 };
