@@ -21,7 +21,7 @@
 // ---------------------------------------------------------------------------
 
 const WEB3FORMS_ACCESS_KEY =
-  import.meta.env.VITE_WEB3FORMS_KEY || "PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE";
+  import.meta.env.VITE_WEB3FORMS_KEY || "10f486e9-c5f0-479d-9aff-888ddb029fbc";
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
