@@ -1,0 +1,209 @@
+/* ============ SHARED QUOTE FORM ============ */
+.quote-form {
+  width: 100%;
+}
+
+.quote-form__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.quote-form__head-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--yellow);
+  color: var(--ink);
+}
+.quote-form__head h3 {
+  font-size: 19px;
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0;
+}
+.quote-form__head p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.quote-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.quote-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.quote-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.quote-form__field span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.quote-form__field small {
+  color: var(--clay);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.quote-form__input-wrap,
+.quote-form__select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.quote-form__input-wrap--textarea {
+  align-items: flex-start;
+}
+.quote-form__input-wrap:focus-within,
+.quote-form__select-wrap:focus-within {
+  border-color: var(--yellow-deep);
+  box-shadow: 0 0 0 3px rgba(255, 195, 0, 0.22);
+}
+
+.quote-form__input-wrap > svg,
+.quote-form__select-wrap > svg:first-child {
+  color: var(--clay);
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+.quote-form__input-wrap--textarea > svg {
+  margin-top: 12px;
+}
+
+.quote-form__input-wrap input,
+.quote-form__input-wrap textarea,
+.quote-form__select-wrap select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 12px 12px 12px 8px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--ink);
+}
+.quote-form__input-wrap textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+.quote-form__select-wrap select {
+  appearance: none;
+  padding-right: 30px;
+  cursor: pointer;
+}
+.quote-form__select-wrap select:invalid {
+  color: var(--muted);
+}
+.quote-form__select-chevron {
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: var(--muted);
+}
+
+.quote-form__input-wrap input::placeholder,
+.quote-form__input-wrap textarea::placeholder {
+  color: var(--muted);
+}
+.quote-form__input-wrap input:focus,
+.quote-form__input-wrap textarea:focus,
+.quote-form__select-wrap select:focus {
+  outline: none;
+}
+
+.quote-form__error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 14px;
+  background: rgba(232, 73, 29, 0.08);
+  border: 1px solid rgba(232, 73, 29, 0.25);
+  border-radius: 10px;
+  color: var(--clay);
+  font-size: 13px;
+}
+
+.quote-form__submit {
+  width: 100%;
+  padding: 14px 20px;
+  justify-content: center;
+}
+.quote-form__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.quote-form__note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ============ SUCCESS STATE ============ */
+.quote-form__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 30px 10px;
+  color: var(--clay);
+}
+.quote-form__success h4 {
+  font-size: 20px;
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 4px 0 0;
+}
+.quote-form__success p {
+  font-size: 13.5px;
+  color: var(--muted);
+  max-width: 320px;
+  margin: 0 0 10px;
+}
+
+/* ============ COMPACT VARIANT (popup / modal) ============ */
+.quote-form--compact .quote-form__row {
+  grid-template-columns: 1fr;
+}
+.quote-form--compact .quote-form__head {
+  margin-bottom: 16px;
+}
+.quote-form--compact .quote-form__form {
+  gap: 12px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .quote-form__row {
+    grid-template-columns: 1fr;
+  }
+  .quote-form__input-wrap input,
+  .quote-form__input-wrap textarea,
+  .quote-form__select-wrap select {
+    /* 16px prevents iOS Safari auto-zoom on focus */
+    font-size: 16px;
+  }
+}

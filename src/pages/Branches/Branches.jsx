@@ -12,6 +12,7 @@ import PageHero from "../../components/PageHero/PageHero";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import BranchCard from "../../components/BranchCard/BranchCard";
 import NetworkMap from "../../components/Illustrations/NetworkMap";
+import QuoteModal from "../../components/QuoteForm/QuoteModal";
 
 import {
   BRANCHES,
@@ -48,6 +49,7 @@ export default function Branches() {
   const [query, setQuery] = useState("");
   const [selectedCity, setSelectedCity] =
     useState(null);
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
 
   const cityCount = NETWORK_CITIES.length;
@@ -430,14 +432,18 @@ export default function Branches() {
                   </a>
 
 
-                  <a
-                    href="/contact"
+                  <button
+                    type="button"
                     className="btn btn-primary"
+                    onClick={() => {
+                      setSelectedCity(null);
+                      setQuoteOpen(true);
+                    }}
                   >
                     Get Free Quote
 
                     <ArrowRight size={16} />
-                  </a>
+                  </button>
 
                 </div>
 
@@ -446,6 +452,18 @@ export default function Branches() {
             </motion.div>
 
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* GET FREE QUOTE — same shared form/email pipeline as the rest of the site */}
+      <AnimatePresence>
+        {quoteOpen && (
+          <QuoteModal
+            source="Branches Page"
+            title="Get Free Quote"
+            subtitle="Tell us about your move and we'll get back to you shortly."
+            onClose={() => setQuoteOpen(false)}
+          />
         )}
       </AnimatePresence>
     </>

@@ -7,9 +7,7 @@ import {
   ArrowRight,
   PhoneCall,
   Star,
-  MapPin,
   Truck,
-  ChevronDown,
   Package,
   Users,
   ClipboardList,
@@ -20,6 +18,7 @@ import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import Stats from "../../components/Stats/Stats";
 import Testimonials from "../../components/Testimonials/Testimonials";
+import QuoteForm from "../../components/QuoteForm/QuoteForm";
 import { COMPANY, CORE_PROMISES, SERVICES, PROCESS_STEPS, CLIENTS } from "../../data/content";
 import "./Home.css";
 
@@ -44,20 +43,11 @@ const HERO_SLIDES = [
 
 const SLIDE_DURATION = 5000; // ms between background changes
 
-const MOVE_TYPES = ["Home Shifting", "Office Relocation", "Vehicle Transportation", "Storage & Warehousing"];
-const MOVE_SIZES = ["1 RK / 1 BHK", "2 BHK", "3 BHK", "4+ BHK / Villa", "Small Office", "Large Office"];
-
 // Icon + accent per process step, matched by position to PROCESS_STEPS in content.js
 const PROCESS_ICONS = [PhoneCall, ClipboardList, Package, Truck, PackageCheck];
 
 export default function Home() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [form, setForm] = useState({
-    moveType: "",
-    from: "",
-    to: "",
-    size: "",
-  });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -67,19 +57,6 @@ export default function Home() {
   }, []);
 
   const networkWords = useMemo(() => NETWORK_WORDS, []);
-
-  const handleChange = (field) => (e) => {
-    setForm((f) => ({ ...f, [field]: e.target.value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Single-page site: scroll down to the Contact section instead of routing.
-    // The entered quote details are kept in sessionStorage so the Contact
-    // form can optionally read/prefill from them.
-    sessionStorage.setItem("apm_quote_prefill", JSON.stringify(form));
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
 
   return (
     <>
@@ -205,7 +182,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* QUOTE STRIP — sits below hero, never covers the image */}
+      {/* QUOTE STRIP — sits below hero, never covers the image. Same shared
+          form/email pipeline as every other quote form on the site. */}
       <section className="quote-strip" id="quote">
         <div className="container">
           <motion.div
@@ -215,85 +193,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <div className="quote-strip__head">
-              <Truck size={20} />
-              <h3>Get Instant Moving Quote</h3>
-            </div>
-
-            <form className="quote-strip__form" onSubmit={handleSubmit}>
-              <label className="hero__field">
-                <span>Moving Type</span>
-                <div className="hero__select-wrap">
-                  <Truck size={15} className="hero__select-lead" />
-                  <select value={form.moveType} onChange={handleChange("moveType")} required>
-                    <option value="" disabled>
-                      Select move type
-                    </option>
-                    {MOVE_TYPES.map((t) => (
-                      <option key={t} value={t}>
-                        {t}
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDown size={16} className="hero__select-icon" />
-                </div>
-              </label>
-
-              <label className="hero__field">
-                <span>From</span>
-                <div className="hero__input-wrap">
-                  <MapPin size={15} />
-                  <input
-                    type="text"
-                    placeholder="Enter pickup location"
-                    value={form.from}
-                    onChange={handleChange("from")}
-                    required
-                  />
-                </div>
-              </label>
-
-              <label className="hero__field">
-                <span>To</span>
-                <div className="hero__input-wrap">
-                  <MapPin size={15} />
-                  <input
-                    type="text"
-                    placeholder="Enter drop location"
-                    value={form.to}
-                    onChange={handleChange("to")}
-                    required
-                  />
-                </div>
-              </label>
-
-              <label className="hero__field">
-                <span>Move Size</span>
-                <div className="hero__select-wrap">
-                  <select value={form.size} onChange={handleChange("size")} required>
-                    <option value="" disabled>
-                      Select size
-                    </option>
-                    {MOVE_SIZES.map((s) => (
-                      <option key={s} value={s}>
-                        {s}
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDown size={16} className="hero__select-icon" />
-                </div>
-              </label>
-
-              <motion.button
-                type="submit"
-                className="btn btn-primary quote-strip__submit"
-                whileHover={{ y: -3 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Get Quote Now <ArrowRight size={16} />
-              </motion.button>
-            </form>
-            <p className="quote-strip__note">Free · No Obligation · 100% Secure</p>
+            <QuoteForm source="Home Page" />
           </motion.div>
         </div>
       </section>

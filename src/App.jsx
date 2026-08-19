@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 import SectionDivider from "./components/SectionDivider/SectionDivider";
+import WelcomePopup from "./components/WelcomePopup/WelcomePopup";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -51,6 +52,7 @@ export default function App() {
 
       <Footer />
       <WhatsAppButton />
+      <WelcomePopup />
     </div>
   );
 }
